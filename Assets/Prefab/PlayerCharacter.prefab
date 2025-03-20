@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5697986099184948665}
   - component: {fileID: 1722165486961904304}
   - component: {fileID: 7692816103570268704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,6 +192,8 @@ MonoBehaviour:
   speed: 5
   maxHealth: 5
   timeInvincible: 2
+  projectilePrefab: {fileID: 5355975910835845611, guid: a8b2a1fd5e2d94b4b9b809646909e9ff,
+    type: 3}
 --- !u!50 &5697986099184948665
 Rigidbody2D:
   serializedVersion: 4
@@ -251,7 +253,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.83252627}
+  m_Offset: {x: 0, y: -0.38446444}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.29}
@@ -262,7 +264,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.77, y: 0.5449475}
+  m_Size: {x: 0.77, y: 0.56085527}
   m_EdgeRadius: 0
 --- !u!95 &7692816103570268704
 Animator:

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-
     public float speed;
     public bool vertical;
     public float changeTime = 3.0f;
@@ -12,7 +11,7 @@ public class EnemyController : MonoBehaviour
     Animator animator;
     float timer;
     int direction = 1;
-
+    bool broken = true;
 
 
     void Start()
@@ -22,6 +21,7 @@ public class EnemyController : MonoBehaviour
         timer = changeTime;
 
     }
+
 
     void Update()
     {
@@ -35,8 +35,14 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+
     void FixedUpdate()
     {
+        if (!broken)
+        {
+            return;
+        }
+
         Vector2 position = rigidbody2d.position;
 
         if (vertical)
@@ -67,5 +73,21 @@ public class EnemyController : MonoBehaviour
             player.ChangeHealth(-1);
         }
     }
+
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+
+
+
+    public void Fix()
+    {
+        broken = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+        animator.SetTrigger("Fixed");
+    }
+
 
 }
