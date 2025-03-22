@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     float timer;
     int direction = 1;
     bool broken = true;
+    public ParticleSystem smokeEffect;
 
 
     void Start()
@@ -87,6 +88,7 @@ public class EnemyController : MonoBehaviour
         broken = false;
         GetComponent<Rigidbody2D>().simulated = false;
         animator.SetTrigger("Fixed");
+        smokeEffect.Stop();
     }
 
 
